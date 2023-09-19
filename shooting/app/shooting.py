@@ -35,6 +35,9 @@ BLAST_END_RADIUS = 8
 BLAST_COLOR_IN = 7
 BLAST_COLOR_OUT = 10
 
+#キーの入力状態を格納する変数 追加 20230919
+key_state = [False] * 256
+
 #敵のリスト
 enemy_list = []
 #弾のリスト
@@ -46,6 +49,15 @@ blast_list = []
 def update_list(list):
     for elem in list:
         elem.update()
+
+#キー入力の状態を更新する関数 追加 20230919
+def update_key_state():
+    for i in range(256):
+        key_state[i] = pyxel.btn(i)
+        
+# キーが押されたかどうかをチェックする関数 追加 20230919
+def is_key_pressed(key):
+    return key_state[key]
 
 #描画 
 def draw_list(list):
@@ -244,6 +256,9 @@ class App:
             self.update_play_scene()
         elif self.scene == SCENE_GAMEOVER:
             self.update_gameover_scene()
+            
+        # キー入力の状態を更新 追加 20230919
+        update_key_state()
 
 
     def update_title_scene(self):
