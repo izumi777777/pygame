@@ -1,3 +1,4 @@
+
 from random import random
 
 import pyxel
@@ -246,8 +247,6 @@ class App:
 
 
     def update_title_scene(self):
-        # if pyxel.btnp(pyxel.KEY_ENTER):
-        #     self.scene = SCENE_PLAY
         if pyxel.btnp(pyxel.KEY_RETURN):
             self.scene = SCENE_PLAY
 
@@ -311,7 +310,8 @@ class App:
         cleanup_list(bullet_list)
         cleanup_list(blast_list)
 
-        if pyxel.btnp(pyxel.KEY_ENTER):
+        # if pyxel.btnp(pyxel.KEY_ENTER):
+        if pyxel.btnp(pyxel.KEY_RETURN): # Enterキーが押されたらゲームをリスタートする
             self.scene = SCENE_PLAY
             self.player.x = pyxel.width / 2
             self.player.y = pyxel.height - 20
