@@ -4,9 +4,9 @@ from random import random
 import pyxel
 
 #画面の大きさ
-SCENE_TITLE = 0
-SCENE_PLAY = 1
-SCENE_GAMEOVER = 2
+SCENE_TITLE = 0  # タイトル画面
+SCENE_PLAY = 1   # ゲーム画面
+SCENE_GAMEOVER = 2 # ゲームオーバー画面
 
 #星の数、手前の星の色、奥の星の色
 STAR_COUNT = 50
